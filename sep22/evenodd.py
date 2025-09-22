@@ -37,3 +37,9 @@ fruits.append('orange') #adds at end
 fruits.insert(1,'peach') #adds at index 1
 
 print(fruits)
+
+fruits.remove('orange')
+print(fruits)
+
+fruits.pop()
+print(fruits)
