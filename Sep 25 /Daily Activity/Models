@@ -1,0 +1,54 @@
+1. Linear Regression
+- Definition Predicts a continuous value based on input features using a straight-line relationship.
+- Use Case Predicting house prices based on size, location, etc.
+- Example Predicting salary based on years of experience.
+
+2. Logistic Regression
+- Definition Predicts a binary outcome (yesno, truefalse) using a sigmoid function.
+- Use Case Email spam detection.
+- Example Predicting whether a customer will buy a product (1) or not (0).
+
+3. Decision Tree
+- Definition A tree-like model that splits data based on feature values to make decisions.
+- Use Case Loan approval systems.
+- Example If income  ₹50K and credit score  700 → approve loan.
+
+ 4. Random Forest
+- Definition An ensemble of decision trees that improves accuracy and reduces overfitting.
+- Use Case Disease diagnosis from medical data.
+- Example Predicting diabetes based on multiple health indicators.
+
+5. SVM (Support Vector Machine)
+- Definition Finds the best boundary (hyperplane) to separate classes.
+- Use Case Face detection in images.
+- Example Classifying images as cat vs. dog.
+
+ 6. CNN (Convolutional Neural Network)
+- Definition Deep learning model specialized for image and spatial data.
+- Use Case Medical image analysis (e.g., detecting tumors).
+- Example Classifying handwritten digits (MNIST dataset).
+
+ 7. RNN (Recurrent Neural Network)
+- Definition Neural network for sequential data with memory of previous inputs.
+- Use Case Language modeling and text generation.
+- Example Predicting the next word in a sentence.
+
+ 8. Transformers
+- Definition Deep learning architecture using attention mechanisms for sequence modeling.
+- Use Case Machine translation (e.g., English to Hindi).
+- Example ChatGPT and BERT use transformers.
+
+9. GANs (Generative Adversarial Networks)
+- Definition Two neural networks (generator and discriminator) compete to create realistic data.
+- Use Case Generating realistic images or art.
+- Example Creating fake celebrity faces.
+
+10. Diffusion Models
+- Definition Generate data by reversing a noise process, often used in image synthesis.
+- Use Case AI art generation (e.g., DALL·E, Stable Diffusion).
+- Example Creating a painting from a text prompt.
+
+11. LLMs (Large Language Models)
+- Definition Deep learning models trained on massive text data to understand and generate language.
+- Use Case Chatbots, code generation, summarization.
+- Example ChatGPT, Gemini, Claude.
