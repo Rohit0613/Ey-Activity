@@ -1,0 +1,407 @@
+db.students.insertOne({
+  Student_id:1,
+  name: "Rahul",
+  age: 21,
+  city:"Mumbai",
+  Course: "AI",
+  Marks: 85
+})
+{
+  acknowledged: true,
+  insertedId: ObjectId('68dfa4c66322952ca4561544')
+}
+db.students.insertMany({})
+MongoInvalidArgumentError: Argument "docs" must be an array of documents
+db.students.insertMany([{
+  Student_id:2,
+  name: "Aniket",
+  age: 22,
+  city:"Mundhwa",
+  Course: "Data Science",
+  Marks: 70
+},{Student_id:3,
+  name: "Somnath",
+  age: 23,
+  city:"Pune",
+  Course: "Maths",
+  Marks: 95
+},{Student_id:4,
+  name: "Soham",
+  age: 25,
+  city:"Daund",
+  Course: "Computer Science",
+  Marks: 105
+},{Student_id:5,
+  name: "Rohit",
+  age: 26,
+  city:"Delhi",
+  Course: "IOT",
+  Marks: 65
+}])
+})
+SyntaxError: Unexpected token (27:0)
+
+[0m [90m 25 |[39m   [33mMarks[39m[33m:[39m [35m65[39m
+ [90m 26 |[39m }])
+[31m[1m>[22m[39m[90m 27 |[39m })
+ [90m    |[39m [31m[1m^[22m[39m[0m
+db.students.insertMany([{
+  Student_id:2,
+  name: "Aniket",
+  age: 22,
+  city:"Mundhwa",
+  Course: "Data Science",
+  Marks: 70
+},{Student_id:3,
+  name: "Somnath",
+  age: 23,
+  city:"Pune",
+  Course: "Maths",
+  Marks: 95
+},{Student_id:4,
+  name: "Soham",
+  age: 25,
+  city:"Daund",
+  Course: "Computer Science",
+  Marks: 105
+},{Student_id:5,
+  name: "Rohit",
+  age: 26,
+  city:"Delhi",
+  Course: "IOT",
+  Marks: 65
+}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('68dfa6bc6322952ca4561545'),
+    '1': ObjectId('68dfa6bc6322952ca4561546'),
+    '2': ObjectId('68dfa6bc6322952ca4561547'),
+    '3': ObjectId('68dfa6bc6322952ca4561548')
+  }
+}
+db.students.find()
+{
+  _id: ObjectId('68dfa4176322952ca4561542')
+}
+{
+  _id: ObjectId('68dfa4456322952ca4561543'),
+  Students_id: 1
+}
+{
+  _id: ObjectId('68dfa4c66322952ca4561544'),
+  Student_id: 1,
+  name: 'Rahul',
+  age: 21,
+  city: 'Mumbai',
+  Course: 'AI',
+  Marks: 85
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561545'),
+  Student_id: 2,
+  name: 'Aniket',
+  age: 22,
+  city: 'Mundhwa',
+  Course: 'Data Science',
+  Marks: 70
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561546'),
+  Student_id: 3,
+  name: 'Somnath',
+  age: 23,
+  city: 'Pune',
+  Course: 'Maths',
+  Marks: 95
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561547'),
+  Student_id: 4,
+  name: 'Soham',
+  age: 25,
+  city: 'Daund',
+  Course: 'Computer Science',
+  Marks: 105
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561548'),
+  Student_id: 5,
+  name: 'Rohit',
+  age: 26,
+  city: 'Delhi',
+  Course: 'IOT',
+  Marks: 65
+}
+db.students.findOne((name: "Rahul"))
+SyntaxError: Unexpected token, expected "," (1:25)
+
+[0m[31m[1m>[22m[39m[90m 1 |[39m db[33m.[39mstudents[33m.[39mfindOne((name[33m:[39m [32m"Rahul"[39m))
+ [90m   |[39m                          [31m[1m^[22m[39m[0m
+db.students.findOne({name: "Rahul"})
+{
+  _id: ObjectId('68dfa4c66322952ca4561544'),
+  Student_id: 1,
+  name: 'Rahul',
+  age: 21,
+  city: 'Mumbai',
+  Course: 'AI',
+  Marks: 85
+}
+db.students.find({Marks: {$gt: 85}})
+{
+  _id: ObjectId('68dfa6bc6322952ca4561546'),
+  Student_id: 3,
+  name: 'Somnath',
+  age: 23,
+  city: 'Pune',
+  Course: 'Maths',
+  Marks: 95
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561547'),
+  Student_id: 4,
+  name: 'Soham',
+  age: 25,
+  city: 'Daund',
+  Course: 'Computer Science',
+  Marks: 105
+}
+db.students.find({},{name: 1, course: 1,_id: 0})
+{}
+{}
+{
+  name: 'Rahul'
+}
+{
+  name: 'Aniket'
+}
+{
+  name: 'Somnath'
+}
+{
+  name: 'Soham'
+}
+{
+  name: 'Rohit'
+}
+db.students.find({},{name: 1, Course: 1,_id: 0})
+{}
+{}
+{
+  name: 'Rahul',
+  Course: 'AI'
+}
+{
+  name: 'Aniket',
+  Course: 'Data Science'
+}
+{
+  name: 'Somnath',
+  Course: 'Maths'
+}
+{
+  name: 'Soham',
+  Course: 'Computer Science'
+}
+{
+  name: 'Rohit',
+  Course: 'IOT'
+}
+db.students.find({},{name: 1, Course: 1,_id: -1})
+{
+  _id: ObjectId('68dfa4176322952ca4561542')
+}
+{
+  _id: ObjectId('68dfa4456322952ca4561543')
+}
+{
+  _id: ObjectId('68dfa4c66322952ca4561544'),
+  name: 'Rahul',
+  Course: 'AI'
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561545'),
+  name: 'Aniket',
+  Course: 'Data Science'
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561546'),
+  name: 'Somnath',
+  Course: 'Maths'
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561547'),
+  name: 'Soham',
+  Course: 'Computer Science'
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561548'),
+  name: 'Rohit',
+  Course: 'IOT'
+}
+db.students.updateOne({name: "Rahul"},{$set:{Marks: 92, Course: "Advanced AI"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.updateMany({Course: "AI"},{$set: {grade:"A"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+db.students.updateMany({Course: "Maths"},{$set: {grade:"A"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.students.find()
+{
+  _id: ObjectId('68dfa4176322952ca4561542')
+}
+{
+  _id: ObjectId('68dfa4456322952ca4561543'),
+  Students_id: 1
+}
+{
+  _id: ObjectId('68dfa4c66322952ca4561544'),
+  Student_id: 1,
+  name: 'Rahul',
+  age: 21,
+  city: 'Mumbai',
+  Course: 'Advanced AI',
+  Marks: 92
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561545'),
+  Student_id: 2,
+  name: 'Aniket',
+  age: 22,
+  city: 'Mundhwa',
+  Course: 'Data Science',
+  Marks: 70
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561546'),
+  Student_id: 3,
+  name: 'Somnath',
+  age: 23,
+  city: 'Pune',
+  Course: 'Maths',
+  Marks: 95,
+  grade: 'A'
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561547'),
+  Student_id: 4,
+  name: 'Soham',
+  age: 25,
+  city: 'Daund',
+  Course: 'Computer Science',
+  Marks: 105
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561548'),
+  Student_id: 5,
+  name: 'Rohit',
+  age: 26,
+  city: 'Delhi',
+  Course: 'IOT',
+  Marks: 65
+}
+db.students.deleteOne({name: "Aniket"})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.students.deleteMany({marks:{$lt: 80 }})
+{
+  acknowledged: true,
+  deletedCount: 0
+}
+db.students.deleteMany({marks:{$gt: 80 }})
+{
+  acknowledged: true,
+  deletedCount: 0
+}
+db.students.deleteMany({marks:{$gt: 100}})
+{
+  acknowledged: true,
+  deletedCount: 0
+}
+db.students.find()
+{
+  _id: ObjectId('68dfa4176322952ca4561542')
+}
+{
+  _id: ObjectId('68dfa4456322952ca4561543'),
+  Students_id: 1
+}
+{
+  _id: ObjectId('68dfa4c66322952ca4561544'),
+  Student_id: 1,
+  name: 'Rahul',
+  age: 21,
+  city: 'Mumbai',
+  Course: 'Advanced AI',
+  Marks: 92
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561546'),
+  Student_id: 3,
+  name: 'Somnath',
+  age: 23,
+  city: 'Pune',
+  Course: 'Maths',
+  Marks: 95,
+  grade: 'A'
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561547'),
+  Student_id: 4,
+  name: 'Soham',
+  age: 25,
+  city: 'Daund',
+  Course: 'Computer Science',
+  Marks: 105
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561548'),
+  Student_id: 5,
+  name: 'Rohit',
+  age: 26,
+  city: 'Delhi',
+  Course: 'IOT',
+  Marks: 65
+}
+db.students.deleteMany({Marks:{$gt: 80 }})
+{
+  acknowledged: true,
+  deletedCount: 3
+}
+db.students.find()
+{
+  _id: ObjectId('68dfa4176322952ca4561542')
+}
+{
+  _id: ObjectId('68dfa4456322952ca4561543'),
+  Students_id: 1
+}
+{
+  _id: ObjectId('68dfa6bc6322952ca4561548'),
+  Student_id: 5,
+  name: 'Rohit',
+  age: 26,
+  city: 'Delhi',
+  Course: 'IOT',
+  Marks: 65
+}
