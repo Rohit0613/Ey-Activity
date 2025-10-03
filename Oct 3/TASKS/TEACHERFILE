@@ -1,0 +1,31 @@
+use school           
+db.createCollection("teachers")   
+
+db.teachers.insertOne({
+  name: "Anita Sharma",
+  subject: "Mathematics",
+  experience: 8,
+  email: "anita.sharma@example.com"
+})
+
+db.teachers.insertMany([
+  { name: "Raj Kumar", subject: "Physics", experience: 10, email: "raj.kumar@example.com" },
+  { name: "Meena Iyer", subject: "Chemistry", experience: 6, email: "meena.iyer@example.com" }
+])
+
+db.teachers.find()                         
+db.teachers.find({ subject: "Physics" })  
+db.teachers.findOne({ name: "Anita Sharma" }) 
+
+db.teachers.updateOne(
+  { name: "Anita Sharma" },
+  { $set: { experience: 9 } }
+)
+
+db.teachers.updateMany(
+  { subject: "Chemistry" },
+  { $set: { experience: 7 } }
+)
+
+db.teachers.deleteOne({ name: "Raj Kumar" })  
+db.teachers.deleteMany({ subject: "Chemistry" }) 
