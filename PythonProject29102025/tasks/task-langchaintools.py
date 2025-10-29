@@ -10,7 +10,7 @@ memory = ConversationBufferMemory(memory_key="chat_history", return_messages=Tru
 llm = ChatOpenAI(
     model="mistralai/mistral-7b-instruct",
     openai_api_base="https://openrouter.ai/api/v1",
-    openai_api_key="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"
+    openai_api_key="sk-or-v1-705c7a1ecf967ee55494329cadba4b9ee5dd8aedf83d779ed0a3331d6dae"
 )
 
 # ------------------------------------------------------------
@@ -135,3 +135,4 @@ while True:
     response = llm.invoke(user_input)
     print("Agent:", response.content)
     memory.save_context({"input": user_input}, {"output": response.content})
+
